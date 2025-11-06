@@ -145,6 +145,12 @@ const AttendanceManagement: React.FC = () => {
     const [attendanceList, setAttendanceList] = useState<Attendance[]>([]);
     const [isLoading, setIsLoading] = useState(false);
 
+    const ATTENDANCE_STATUS_MAP: { [key in AttendanceStatus]: string } = {
+        PENDING: "대기중",
+        ATTENDED: "참석",
+        ABSENT: "불참"
+    }
+
     // 1. 스터디의 모든 일정 목록을 불러오는 함수
     useEffect(() => {
         const fetchSchedules = async () => {
@@ -207,10 +213,16 @@ const AttendanceManagement: React.FC = () => {
             }));
             await axiosInstance.patch(`/schedules/${selectedScheduleId}/attendance`, payload);
             alert("출석 정보가 성공적으로 업데이트되었습니다.");
-            fetchAttendance(); // 최신 정보 다시 불러오기
+
+            setTimeout(() => {
+                fetchAttendance();
+            }, 1000);
+
         } catch (error) {
             console.error("출석 정보 업데이트 실패:", error);
             alert("업데이트 중 오류가 발생했습니다.");
+
+            fetchAttendance(); // 최신 정보 다시 불러오기
         }
     };
 
@@ -259,7 +271,7 @@ const AttendanceManagement: React.FC = () => {
                     attendanceList.map(item => (
                         <TableRow key={item.studyMemberId}>
                             <NicknameCell> {item.nickname} </NicknameCell>
-                            <StatusCell> {item.status === 'PENDING' ? '참석' : item.status} </StatusCell>
+                            <StatusCell> {ATTENDANCE_STATUS_MAP[item.status]} </StatusCell>
                             <ActionCell>
                                 <RadioLabel>
                                     <input type="radio" name={`status-${item.studyMemberId}`} checked={item.status === 'ATTENDED'} onChange={() => handleStatusChange(item.studyMemberId, 'ATTENDED')} />
