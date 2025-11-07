@@ -65,14 +65,14 @@ jobspoon-frontend/
     ```bash
     git clone [[https://github.com/Your-Frontend-Repo-URL](https://github.com/Your-Frontend-Repo-URL)]
     cd [frontend-repo-name]
-    ```
+
 
 2.  **의존성 설치 (Lerna Bootstrap)**
 
     Lerna 모노레포의 모든 패키지 의존성을 한 번에 설치합니다.
     ```bash
     npm install
-    ```
+
     *(NPM이 `lerna bootstrap`을 자동으로 실행합니다.)*
 
 3.  **환경변수 파일 생성 (`.env`)**
@@ -87,7 +87,7 @@ jobspoon-frontend/
     프로젝트 루트에서 `start` 스크립트를 실행합니다. (Lerna가 모든 패키지를 동시에 실행합니다.)
     ```bash
     npm run start
-    ```
+
 
 5.  **확인**
     * 브라우저에서 `http://localhost:3000` (컨테이너 App)으로 접속합니다.
