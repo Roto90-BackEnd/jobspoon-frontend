@@ -1,8 +1,8 @@
 # 🥄 Jobspoon - Frontend (MFE Monorepo)
 
-[![React](https://img.shields.io/badge/React-18.x-blue)](https://reactjs.org/)
-[![Vue.js](https://img.shields.io/badge/Vue.js-3.x-brightgreen)](https://vuejs.org/)
-[![Svelte](https://img.shields.io/badge/Svelte-4.x-orange)](https://svelte.dev/)
+[![React](https://img.shields.io/badge/React-18.3.1-blue)](https://reactjs.org/)
+[![Vue.js](https://img.shields.io/badge/Vue.js-3.2.19-brightgreen)](https://vuejs.org/)
+[![Svelte](https://img.shields.io/badge/Svelte-5.38.10-orange)](https://svelte.dev/)
 [![Lerna](https://img.shields.io/badge/managed%20by-Lerna-blueviolet)](https://lerna.js.org/)
 [![Docker](https://img.shields.io/badge/Docker-ready-blue)](./Dockerfile)
 [![Project Period](https://img.shields.io/badge/Project%20Period-2025.07%20~%202025.10-informational)](...)
