@@ -63,36 +63,52 @@ jobspoon-frontend/
 
 1.  **레포지토리 클론**
     ```bash
-    git clone [[https://github.com/Your-Frontend-Repo-URL](https://github.com/Your-Frontend-Repo-URL)]
+    git clone [https://github.com/Your-Frontend-Repo-URL]
     cd [frontend-repo-name]
-
+    ```
 
 2.  **의존성 설치 (Lerna Bootstrap)**
 
     Lerna 모노레포의 모든 패키지 의존성을 한 번에 설치합니다.
     ```bash
     npm install
-
+    ```
     *(NPM이 `lerna bootstrap`을 자동으로 실행합니다.)*
 
 3.  **환경변수 파일 생성 (`.env`)**
 
-    > 💡 .env 파일 관리
-    > MFE 구조의 각 패키지(main-container, studyroom-app 등)는 자신만의 .env 파일이 필요합니다.
-    > 각 패키지 폴더 내부의 .env.example 파일을 .env로 복사하고, 필요한 API 주소(e.g., VITE_API_URL=http://localhost:8080)를 설정해야 합니다.
-    > 각 패키지(e.g., `packages/study`)를 개별 실행해야 할 경우, 해당 패키지 내부의 `.env.example`과 `README.md`를 참고하세요.
+    > 💡 **.env 파일 관리**
+    >
+    > MFE 구조의 각 패키지(`main-container`, `studyroom-app` 등)는 자신만의 `.env` 파일이 필요합니다.
+    > 
+    > 각 패키지 폴더 내부의 `.env.example` 파일을 `.env`로 복사하고, 필요한 API 주소(e.g., `VITE_API_URL=http://localhost:8080`)를 설정해야 합니다.
+
+    (1) **루트 `.env` 파일 생성:** (루트에 `.env.example`이 있다면)
+    ```bash
+    cp .env.example .env
+    ```
+
+    (2) **각 패키지 `.env` 파일 생성:** (필요한 모든 패키지에 대해 반복)
+    ```bash
+    # 예시:
+    cp main-container/.env.example main-container/.env
+    cp studyroom-app/.env.example studyroom-app/.env
+    cp vue-ai-interview-app/.env.example vue-ai-interview-app/.env
+    ```
 
 4.  **로컬 서버 실행**
 
     프로젝트 루트에서 `start` 스크립트를 실행합니다. (Lerna가 모든 패키지를 동시에 실행합니다.)
     ```bash
     npm run start
-
+    ```
 
 5.  **확인**
     * 브라우저에서 `http://localhost:3000` (컨테이너 App)으로 접속합니다.
 
+
 ## 🔗 백엔드 API
+
 본 프론트엔드 프로젝트는 Jobspoon-Spring-Backend 레포지토리에 정의된 API를 사용합니다.
 
 백엔드 레포지토리: https://github.com/Roto90-BackEnd/jobspoon-spring-backend
