@@ -36,6 +36,7 @@ jobspoon-frontend/
 ├── 📄 Dockerfile           # (Root Dockerfile for container)
 ├── 📄 lerna.json           # (Lerna 모노레포 configuration)
 └── 📄 package.json          # (Root package.json & scripts)
+```
 
 ## 🛠️ 기술 스택 (Tech Stack)
 
